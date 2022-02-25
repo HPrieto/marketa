@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="21A559" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="OSAccount" representedClassName="OSAccountMO" syncable="YES" codeGenerationType="class">
+        <attribute name="address" optional="YES" attributeType="String"/>
+        <attribute name="config" optional="YES" attributeType="String"/>
+        <attribute name="profileImageUrl" optional="YES" attributeType="String"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="OSUser"/>
+    </entity>
+    <entity name="OSAsset" representedClassName="OSAssetMO" syncable="YES" codeGenerationType="class">
+        <attribute name="animationOriginalUrl" optional="YES" attributeType="String"/>
+        <attribute name="animationUrl" optional="YES" attributeType="String"/>
+        <attribute name="backgroundColor" optional="YES" attributeType="String"/>
+        <attribute name="desc" optional="YES" attributeType="String"/>
+        <attribute name="externalLink" optional="YES" attributeType="String"/>
+        <attribute name="imageOriginalUrl" optional="YES" attributeType="String"/>
+        <attribute name="imagePreviewUrl" optional="YES" attributeType="String"/>
+        <attribute name="imageThumbnailUrl" optional="YES" attributeType="String"/>
+        <attribute name="imageUrl" optional="YES" attributeType="String"/>
+        <attribute name="isPresale" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="lastSale" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="numSales" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="permalink" optional="YES" attributeType="String"/>
+        <attribute name="tokenId" optional="YES" attributeType="String"/>
+        <relationship name="assetContract" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="OSAssetContract"/>
+        <relationship name="collection" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="OSAssetCollection"/>
+        <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="OSAccount"/>
+        <relationship name="sellOrders" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="OSSellOrder"/>
+        <relationship name="traits" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="OSTrait"/>
+    </entity>
+    <entity name="OSAssetCollection" representedClassName="OSAssetCollectionMO" syncable="YES" codeGenerationType="class">
+        <attribute name="bannerImageUrl" optional="YES" attributeType="String"/>
+        <attribute name="desc" optional="YES" attributeType="String"/>
+        <attribute name="hidden" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="imageUrl" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="OSAssetContract" representedClassName="OSAssetContractMO" syncable="YES" codeGenerationType="class">
+        <attribute name="address" optional="YES" attributeType="String"/>
+        <attribute name="desc" optional="YES" attributeType="String"/>
+        <attribute name="externalLink" optional="YES" attributeType="String"/>
+        <attribute name="imageUrl" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="symbol" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="OSPaymentTokenContract" representedClassName="OSPaymentTokenContractMO" syncable="YES" codeGenerationType="class">
+        <attribute name="address" optional="YES" attributeType="String"/>
+        <attribute name="decimals" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="ethPrice" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="imageUrl" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="symbol" optional="YES" attributeType="String"/>
+        <attribute name="usdPrice" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="OSSellOrder" representedClassName="OSSellOrderMO" syncable="YES" codeGenerationType="class">
+        <attribute name="closingDate" optional="YES" attributeType="String"/>
+        <attribute name="createdDate" optional="YES" attributeType="String"/>
+        <relationship name="paymentTokenContract" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="OSPaymentTokenContract"/>
+    </entity>
+    <entity name="OSTrait" representedClassName="OSTraitMO" syncable="YES" codeGenerationType="class">
+        <attribute name="displayType" optional="YES" attributeType="String"/>
+        <attribute name="maxValue" optional="YES" attributeType="String"/>
+        <attribute name="order" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="traitCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="traitType" optional="YES" attributeType="String"/>
+        <attribute name="value" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="OSUser" representedClassName="OSUserMO" syncable="YES" codeGenerationType="class">
+        <attribute name="username" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="OSAccount" positionX="0" positionY="45" width="128" height="14"/>
+        <element name="OSAsset" positionX="-63" positionY="-18" width="128" height="329"/>
+        <element name="OSAssetCollection" positionX="-54" positionY="0" width="128" height="14"/>
+        <element name="OSAssetContract" positionX="-18" positionY="27" width="128" height="14"/>
+        <element name="OSPaymentTokenContract" positionX="36" positionY="81" width="128" height="14"/>
+        <element name="OSSellOrder" positionX="-9" positionY="36" width="128" height="14"/>
+        <element name="OSTrait" positionX="-36" positionY="9" width="128" height="14"/>
+        <element name="OSUser" positionX="18" positionY="63" width="128" height="14"/>
+    </elements>
+</model>

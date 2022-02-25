@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AssetView: View {
+struct AssetCollectionDetailView: View {
     let imageUrlString: String
     
     private var imageUrl: URL? {
@@ -24,6 +24,7 @@ struct AssetView: View {
             } placeholder: {
                 ProgressView()
             }
+            .frame(maxHeight: 180)
             .cornerRadius(16)
             
             HStack(alignment: .top, spacing: 0) {
@@ -106,6 +107,7 @@ struct AssetView: View {
             }
             .padding()
         }
+        .frame(maxWidth: 180)
         .cornerRadius(16)
         .overlay(
             RoundedRectangle(cornerRadius: 16)
@@ -115,38 +117,38 @@ struct AssetView: View {
     }
 }
 
-struct AssetView_Previews: PreviewProvider {
+struct AssetCollectionDetailView_Previews: PreviewProvider {
     static var previews: some View {
         ScrollView {
             
             VStack {
                 
                 HStack(spacing: 0) {
-                    AssetView(
+                    AssetCollectionDetailView(
                         imageUrlString: "https://lh3.googleusercontent.com/IZ5z4tppxxKfP-NHX9WgAFTyyoqFes1ReQ0M0CybiicFvKbngSbrIzkynxpccgSxkL2QILZ6qXELm-SU61j3bDHN3RDhQMTOekLr9w=w180"
                     )
                     
-                    AssetView(
+                    AssetCollectionDetailView(
                         imageUrlString: "https://lh3.googleusercontent.com/IZ5z4tppxxKfP-NHX9WgAFTyyoqFes1ReQ0M0CybiicFvKbngSbrIzkynxpccgSxkL2QILZ6qXELm-SU61j3bDHN3RDhQMTOekLr9w=w180"
                     )
                 }
                 
                 HStack(spacing: 0) {
-                    AssetView(
+                    AssetCollectionDetailView(
                         imageUrlString: "https://lh3.googleusercontent.com/IZ5z4tppxxKfP-NHX9WgAFTyyoqFes1ReQ0M0CybiicFvKbngSbrIzkynxpccgSxkL2QILZ6qXELm-SU61j3bDHN3RDhQMTOekLr9w=w180"
                     )
                     
-                    AssetView(
+                    AssetCollectionDetailView(
                         imageUrlString: "https://lh3.googleusercontent.com/IZ5z4tppxxKfP-NHX9WgAFTyyoqFes1ReQ0M0CybiicFvKbngSbrIzkynxpccgSxkL2QILZ6qXELm-SU61j3bDHN3RDhQMTOekLr9w=w180"
                     )
                 }
                 
                 HStack(spacing: 0) {
-                    AssetView(
+                    AssetCollectionDetailView(
                         imageUrlString: "https://lh3.googleusercontent.com/IZ5z4tppxxKfP-NHX9WgAFTyyoqFes1ReQ0M0CybiicFvKbngSbrIzkynxpccgSxkL2QILZ6qXELm-SU61j3bDHN3RDhQMTOekLr9w=w180"
                     )
                     
-                    AssetView(
+                    AssetCollectionDetailView(
                         imageUrlString: "https://lh3.googleusercontent.com/IZ5z4tppxxKfP-NHX9WgAFTyyoqFes1ReQ0M0CybiicFvKbngSbrIzkynxpccgSxkL2QILZ6qXELm-SU61j3bDHN3RDhQMTOekLr9w=w180"
                     )
                 }

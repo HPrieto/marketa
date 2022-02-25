@@ -29,7 +29,7 @@ struct AssetCollectionView: View {
                 ProgressView()
             }
             
-            VStack(spacing: 8) {
+            VStack(spacing: 4) {
                 
                 // collection profile image
                 Image(uiImage: self.image)
