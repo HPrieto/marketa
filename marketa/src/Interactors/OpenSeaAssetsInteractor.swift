@@ -60,3 +60,11 @@ struct RealOpenSeaAssetsInteractor: OpenSeaAssetsInteractor {
         return ProcessInfo.processInfo.isRunningTests ? 0 : 0.5
     }
 }
+
+struct StubOpenSeaAssetsInteractor: OpenSeaAssetsInteractor {
+    func loadCollection(collectionSlug: String) -> AnyPublisher<OSAsset.OSAssetCollection?, Error> {
+        return Just<OSAsset.OSAssetCollection?>.withErrorType(nil, Error.self)
+    }
+    
+    func loadCollection(collection: LoadableSubject<OSAsset.OSAssetCollection>, collectionSlug: String) { }
+}

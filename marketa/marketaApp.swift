@@ -10,11 +10,19 @@ import SwiftUI
 @main
 struct marketaApp: App {
     let persistenceController = PersistenceController.shared
-
+    
+    private var appEnvironment: AppEnvironment {
+        AppEnvironment.bootstrap()
+    }
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            if ProcessInfo.processInfo.isRunningTests {
+                Text("Running Unit Tests.")
+            } else {
+                ContentView(container: appEnvironment.container)
+                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            }
         }
     }
 }

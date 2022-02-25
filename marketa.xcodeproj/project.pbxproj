@@ -23,6 +23,10 @@
 		4335451D27ADD3F9001BC56D /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4335451C27ADD3F9001BC56D /* UIImage+Extensions.swift */; };
 		4335451F27B237B7001BC56D /* DropdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4335451E27B237B7001BC56D /* DropdownView.swift */; };
 		4381D12827C8376B00BCA50F /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4381D12727C8376B00BCA50F /* Helpers.swift */; };
+		4381D12B27C8598F00BCA50F /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4381D12A27C8598F00BCA50F /* AppEnvironment.swift */; };
+		4381D12E27C85A1400BCA50F /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4381D12D27C85A1400BCA50F /* DIContainer.swift */; };
+		4381D13027C85CA100BCA50F /* RootViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4381D12F27C85CA100BCA50F /* RootViewModifier.swift */; };
+		4381D13327C8632200BCA50F /* OSAssetCollectionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4381D13227C8632200BCA50F /* OSAssetCollectionList.swift */; };
 		438FF00C27C0277D003352F5 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438FF00B27C0277C003352F5 /* Models.swift */; };
 		438FF00F27C02B14003352F5 /* OpenSeaAssetsWebRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438FF00E27C02B14003352F5 /* OpenSeaAssetsWebRepository.swift */; };
 		438FF01127C02B66003352F5 /* WebRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438FF01027C02B66003352F5 /* WebRepository.swift */; };
@@ -77,6 +81,10 @@
 		4335451C27ADD3F9001BC56D /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		4335451E27B237B7001BC56D /* DropdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownView.swift; sourceTree = "<group>"; };
 		4381D12727C8376B00BCA50F /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		4381D12A27C8598F00BCA50F /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+		4381D12D27C85A1400BCA50F /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
+		4381D12F27C85CA100BCA50F /* RootViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModifier.swift; sourceTree = "<group>"; };
+		4381D13227C8632200BCA50F /* OSAssetCollectionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSAssetCollectionList.swift; sourceTree = "<group>"; };
 		438FF00B27C0277C003352F5 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		438FF00E27C02B14003352F5 /* OpenSeaAssetsWebRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSeaAssetsWebRepository.swift; sourceTree = "<group>"; };
 		438FF01027C02B66003352F5 /* WebRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebRepository.swift; sourceTree = "<group>"; };
@@ -181,12 +189,14 @@
 		433544F827ACC87F001BC56D /* src */ = {
 			isa = PBXGroup;
 			children = (
+				4381D12C27C85A0700BCA50F /* Injected */,
+				4381D12927C8598100BCA50F /* System */,
 				438FF02327C41589003352F5 /* Persistence */,
 				438FF01E27C4136C003352F5 /* Interactors */,
 				438FF00D27C02AF5003352F5 /* Repositories */,
 				438FF00A27C0276E003352F5 /* Models */,
 				4335451127AD10A5001BC56D /* extensions */,
-				4335450C27ACCA3D001BC56D /* views */,
+				4335450C27ACCA3D001BC56D /* UI */,
 				4335450927ACC9D9001BC56D /* Utilities */,
 			);
 			path = src;
@@ -207,15 +217,17 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		4335450C27ACCA3D001BC56D /* views */ = {
+		4335450C27ACCA3D001BC56D /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				4381D13127C8630A00BCA50F /* Screens */,
 				4335450D27ACCA6D001BC56D /* AssetCollectionView.swift */,
 				4335450F27AD0EF2001BC56D /* AssetCollectionDetailView.swift */,
 				4335451427ADB65B001BC56D /* AssetDetailView.swift */,
 				4335451E27B237B7001BC56D /* DropdownView.swift */,
+				4381D12F27C85CA100BCA50F /* RootViewModifier.swift */,
 			);
-			path = views;
+			path = UI;
 			sourceTree = "<group>";
 		};
 		4335451127AD10A5001BC56D /* extensions */ = {
@@ -225,6 +237,30 @@
 				4335451C27ADD3F9001BC56D /* UIImage+Extensions.swift */,
 			);
 			path = extensions;
+			sourceTree = "<group>";
+		};
+		4381D12927C8598100BCA50F /* System */ = {
+			isa = PBXGroup;
+			children = (
+				4381D12A27C8598F00BCA50F /* AppEnvironment.swift */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
+		4381D12C27C85A0700BCA50F /* Injected */ = {
+			isa = PBXGroup;
+			children = (
+				4381D12D27C85A1400BCA50F /* DIContainer.swift */,
+			);
+			path = Injected;
+			sourceTree = "<group>";
+		};
+		4381D13127C8630A00BCA50F /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				4381D13227C8632200BCA50F /* OSAssetCollectionList.swift */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		438FF00A27C0276E003352F5 /* Models */ = {
@@ -393,6 +429,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4381D12E27C85A1400BCA50F /* DIContainer.swift in Sources */,
 				433544D327ACC7C0001BC56D /* Persistence.swift in Sources */,
 				438FF02727C415BB003352F5 /* CoreDataStack.swift in Sources */,
 				433544D627ACC7C0001BC56D /* marketa.xcdatamodeld in Sources */,
@@ -401,6 +438,7 @@
 				438FF01B27C40CF2003352F5 /* Store.swift in Sources */,
 				4335451D27ADD3F9001BC56D /* UIImage+Extensions.swift in Sources */,
 				433544CC27ACC7BE001BC56D /* ContentView.swift in Sources */,
+				4381D13027C85CA100BCA50F /* RootViewModifier.swift in Sources */,
 				4335451027AD0EF2001BC56D /* AssetCollectionDetailView.swift in Sources */,
 				433544CA27ACC7BE001BC56D /* marketaApp.swift in Sources */,
 				438FF01327C02BD6003352F5 /* APICall.swift in Sources */,
@@ -410,8 +448,10 @@
 				4335451327AD10B6001BC56D /* Font+Extensions.swift in Sources */,
 				438FF00C27C0277D003352F5 /* Models.swift in Sources */,
 				438FF02527C4159A003352F5 /* CoreDataHelpers.swift in Sources */,
+				4381D12B27C8598F00BCA50F /* AppEnvironment.swift in Sources */,
 				438FF01D27C40D44003352F5 /* LazyList.swift in Sources */,
 				4335450E27ACCA6D001BC56D /* AssetCollectionView.swift in Sources */,
+				4381D13327C8632200BCA50F /* OSAssetCollectionList.swift in Sources */,
 				438FF02C27C43228003352F5 /* Models+CoreData.swift in Sources */,
 				438FF01727C40C4F003352F5 /* Loadable.swift in Sources */,
 				438FF02027C4138F003352F5 /* OpenSeaAssetsInteractor.swift in Sources */,
